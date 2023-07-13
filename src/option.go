@@ -2,8 +2,8 @@ package safego
 
 // Option is a type that represents an optional value.
 type Option[T any] struct {
-	Val    T
-	Exists bool
+	val    T
+	exists bool
 }
 
 // NewOption creates a new Option[T] with the given value.
@@ -16,18 +16,18 @@ func NewOption[T any](val T) *Option[T] {
 
 // IsSome returns true if the option is a Some value.
 func (o *Option[T]) IsSome() bool {
-	return o.Exists
+	return o.exists
 }
 
 // IsNone returns true if the option is a None value.
 func (o *Option[T]) IsNone() bool {
-	return !o.Exists
+	return !o.exists
 }
 
 // Expect panics with the given message if the option is a None value.
 func (o *Option[T]) Expect(msg string) T {
-	if o.Exists {
-		return o.Val
+	if o.exists {
+		return o.val
 	}
 
 	panic(msg)
@@ -35,8 +35,8 @@ func (o *Option[T]) Expect(msg string) T {
 
 // Unwrap panics if the option is a None value.
 func (o *Option[T]) Unwrap() T {
-	if o.Exists {
-		return o.Val
+	if o.exists {
+		return o.val
 	}
 
 	panic("unwrap a none option")
@@ -44,8 +44,8 @@ func (o *Option[T]) Unwrap() T {
 
 // UnwrapOr returns the value of the option if it is a Some value, otherwise it returns the given default value.
 func (o *Option[T]) UnwrapOr(def T) T {
-	if o.Exists {
-		return o.Val
+	if o.exists {
+		return o.val
 	}
 
 	return def
@@ -53,8 +53,8 @@ func (o *Option[T]) UnwrapOr(def T) T {
 
 // UnwrapOrElse returns the value of the option if it is a Some value, otherwise it returns the result of the given function.
 func (o *Option[T]) UnwrapOrElse(fn func() T) T {
-	if o.Exists {
-		return o.Val
+	if o.exists {
+		return o.val
 	}
 
 	return fn()
