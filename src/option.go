@@ -7,16 +7,16 @@ type Option[T any] struct {
 }
 
 // Some creates a new Option[T] with the given value.
-func Some[T any](val T) *Option[T] {
-	return &Option[T]{
+func Some[T any](val T) Option[T] {
+	return Option[T]{
 		val:    val,
 		exists: true,
 	}
 }
 
 // None creates a new empty Option[T].
-func None[T any]() *Option[T] {
-	return &Option[T]{
+func None[T any]() Option[T] {
+	return Option[T]{
 		exists: false,
 	}
 }
