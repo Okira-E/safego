@@ -9,8 +9,8 @@ type Option[T any] struct {
 // NewOption creates a new Option[T] with the given value.
 func NewOption[T any](val T) *Option[T] {
 	return &Option[T]{
-		Val:    val,
-		Exists: true,
+		val:    val,
+		exists: true,
 	}
 }
 
