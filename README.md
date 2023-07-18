@@ -12,11 +12,7 @@ go get github.com/Okira-E/safego
 
 ## Usage
 
-To use safego, import the package into your Go code:
-
-```go
-import "github.com/Okira-E/safego"
-```
+It will always be faster to make a file called `option.go` and copy the source code.
 
 ### Creating an Option
 
