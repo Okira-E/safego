@@ -1,18 +1,12 @@
 # SafeGo
 
-safego is a Go library that provides a Rust-like Option enum for safer handling of optional values. The Option type allows you to represent the presence or absence of a value in a type-safe manner, reducing the chances of runtime errors related to nil or null values.
+safego is a Go library found at [github:Okira-E/safego](https://github.com/Okira-E/safego) that provides a Rust-like Option enum for safer handling of optional values. The Option type allows you to represent the presence or absence of a value in a type-safe manner, reducing the chances of runtime errors related to nil or null values.
 
 ## Installation
 
-To use safego in your Go project, you need to have Go installed and set up on your machine. Then, you can install the library using the go get command:
-
-```shell
-go get github.com/Okira-E/safego
-```
+It will always be faster to make a file called `option.go` and copy the source code.
 
 ## Usage
-
-It will always be faster to make a file called `option.go` and copy the source code.
 
 ### Creating an Option
 
